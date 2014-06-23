@@ -1,0 +1,33 @@
+<h1>Listando cadastros</h1>
+
+<table>
+  <tr>
+    <th>Usuário</th>
+    <th>Sintomas</th>
+    <th>Exames</th>
+    <th>Batimentos</th>
+    <th>Histórico pessoal</th>
+    <th>Observações</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @records.each do |record| %>
+  <tr>
+    <td><%= record.userid %></td>
+    <td><%= record.symptoms %></td>
+    <td><%= record.exam %></td>
+    <td><%= record.beats %></td>
+    <td><%= record.history %></td>
+    <td><%= record.obs %></td>
+    <td><%= link_to 'Mostrar', record %></td>
+    <td><%= link_to 'Editar', edit_record_path(record) %></td>
+    <td><%= link_to 'Apagar', record, confirm: 'Você tem certeza?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo cadastro', new_record_path %>

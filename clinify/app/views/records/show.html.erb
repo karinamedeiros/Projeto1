@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Symptoms:</b>
+  <%= @record.symptoms %>
+</p>
+
+<p>
+  <b>Exam:</b>
+  <%= @record.exam %>
+</p>
+
+<p>
+  <b>Beats:</b>
+  <%= @record.beats %>
+</p>
+
+<p>
+  <b>History:</b>
+  <%= @record.history %>
+</p>
+
+<p>
+  <b>Obs:</b>
+  <%= @record.obs %>
+</p>
+
+
+<%= link_to 'Editar', edit_record_path(@record) %> |
+<%= link_to 'Voltar', records_path %>

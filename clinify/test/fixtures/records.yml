@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  symptoms: MyString
+  exam: MyString
+  beats: MyString
+  history: MyString
+  obs: MyString
+
+two:
+  symptoms: MyString
+  exam: MyString
+  beats: MyString
+  history: MyString
+  obs: MyString
