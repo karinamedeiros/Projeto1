@@ -1,4 +1,8 @@
 Clinify::Application.routes.draw do
+  get "clinify_static_pages/home"
+
+  get "clinify_static_pages/help"
+
   resources :records
 
   resources :users
