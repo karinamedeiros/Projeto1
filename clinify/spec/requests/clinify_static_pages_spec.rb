@@ -1,45 +1,30 @@
 require 'spec_helper'
 
 describe "Clinify static pages" do
+
+  subject {page}
   
   describe "Home page" do
-    it "should have the content 'Clinify' " do
-      visit root_path
-      expect(page).to have_content('Clinify')
-    end
+    before {visit root_path}
 
-    it "should have the base title" do
-      visit root_path
-      expect(page).to have_title('Clinify')
+    it { should have_content('Kefisio') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Home') }
   end
 
-    it "should not have a custom page title" do
-      visit root_path
-      expect(page).not_to have_title('| Home')
-    end
-end
 
   describe "Help page" do
-    it "should have the content 'Help' " do
-      visit help_path
-      expect(page).to have_content('Help')  
-    end
+    before { visit help_path }
 
-    it "should have the title 'Help' " do
-      visit help_path
-      expect(page).to have_title('Clinify | Help')
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
-end
+
 
   describe "About page" do
-    it "should have the content 'About us' " do
-      visit about_path
-      expect(page).to have_content('About us')
-  end
+    before { visit about_path }
 
-    it "should have the title 'About us' " do
-      visit about_path
-      expect(page).to have_title('Clinify | About us')
-    end   
+    it { should have_content('About') }
+    it { should have_title(full_title('About')) }
   end
 end
