@@ -3,15 +3,20 @@ require 'spec_helper'
 describe "Clinify static pages" do
   
   describe "Home page" do
-    it "should have the content 'Home' " do
+    it "should have the content 'Clinify' " do
       visit '/clinify_static_pages/home'
-      expect(page).to have_content('Home')
+      expect(page).to have_content('Clinify')
     end
 
-    it "should have the the title 'Home' " do
+    it "should have the base title" do
       visit '/clinify_static_pages/home'
-      expect(page).to have_title('Clinify | Home')
+      expect(page).to have_title('Clinify')
   end
+
+    it "should not have a custom page title" do
+      visit '/clinify_static_pages/home'
+      expect(page).not_to have_title('| Home')
+    end
 end
 
   describe "Help page" do

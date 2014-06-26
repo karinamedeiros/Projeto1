@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140623021209) do
+ActiveRecord::Schema.define(:version => 20140625221020) do
 
   create_table "records", :force => true do |t|
     t.string   "symptoms"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20140623021209) do
     t.string   "obs"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "birthday"
     t.string   "userid"
   end
 

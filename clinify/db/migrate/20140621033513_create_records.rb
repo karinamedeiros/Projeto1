@@ -2,6 +2,7 @@ class CreateRecords < ActiveRecord::Migration
   def change
     create_table :records do |t|
       t.string :userid
+      t.date :birthday
       t.string :symptoms
       t.string :exam
       t.string :beats
