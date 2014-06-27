@@ -1,0 +1,28 @@
+<h1>Pesquisar usuário</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Login</th>
+    <th>Senha</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <% if user.name.include? @name %>
+    <tr>
+    <td><%= user.name %></td>
+    <td><%= user.login %></td>
+    <td><%= user.senha %></td>
+    <td><%= link_to 'Mostrar', user %></td>
+    <td><%= link_to 'Editar', edit_user_path(user) %></td>
+    <td><%= link_to 'Apagar', user, confirm: 'Você tem certeza?', method: :delete %></td>
+    </tr>
+  <% end %>
+<% end %>
+</table>
+
+<%= link_to 'Voltar', users_path %>
+<%= link_to 'Pesquisar Novamente', search_user_path %>

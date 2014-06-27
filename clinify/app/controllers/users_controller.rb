@@ -32,6 +32,16 @@ class UsersController < ApplicationController
     end
   end
 
+ # GET /user/search
+  def search
+
+  end
+  
+  def searchname
+    @users = User.all
+  end
+  
+  
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])

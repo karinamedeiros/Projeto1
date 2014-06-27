@@ -1,5 +1,12 @@
 <h1>Pesquisar usuário</h1>
 
-<%= render 'form' %>
+<br>
 
+<%= form_tag(searchname_user_path, method: "get") do %>
+  <%= label_tag(:q, "Nome do Paciente:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Pesquisar") %>
+<% end %>
+
+<br>
 <%= link_to 'Voltar', users_path %>

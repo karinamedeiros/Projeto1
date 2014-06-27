@@ -1,15 +1,25 @@
 Clinify::Application.routes.draw do
+
+  resources :records
+  resources :users do
+     get "search"
+     get "searchname"
+  end
+  resources :sessions, only: [:new, :create, :destroy]
+
   root  :to => 'clinify_static_pages#home' , via: 'get'
 
   match '/help' , to: 'clinify_static_pages#help', via: 'get'
 
   match '/about' , to: 'clinify_static_pages#about', via: 'get'
 
-  match '/login' , to: 'clinify_static_pages#login', via: 'get'
+  match '/login' , to: 'sessions#new', via: 'get'
+  match '/logout' , to: 'sessions#destroy', via: 'delete'
 
-  resources :records
+  #get 'search'
+  #get 'searchname'
 
-  resources :users
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
